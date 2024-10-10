@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://hnpmdhe8cni6"]
+[gd_scene load_steps=5 format=3 uid="uid://hnpmdhe8cni6"]
+
+[ext_resource type="Script" path="res://scripts/XRSetup.gd" id="1_sy7fk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_44o46"]
 
@@ -11,6 +13,7 @@
 [node name="mainSceneBase" type="Node3D" parent="."]
 
 [node name="XROrigin3D" type="XROrigin3D" parent="mainSceneBase"]
+script = ExtResource("1_sy7fk")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="mainSceneBase/XROrigin3D"]
 
