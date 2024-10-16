@@ -3,8 +3,9 @@ extends XRController3D
 var beamVisible = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	$"LineRenderer".points[0] = global_position + (-global_basis.z * 0.05)
+	$"LineRenderer".points[1] = (-global_basis.z * 1) + $"LineRenderer".points[0]
+	$"LineRenderer".create_trimesh_collision()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

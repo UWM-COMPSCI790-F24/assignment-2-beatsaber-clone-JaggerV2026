@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/mainScene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+swordInteractions=""
+
 [input]
 
 quest_a_button={
