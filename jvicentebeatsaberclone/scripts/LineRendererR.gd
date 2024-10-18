@@ -12,12 +12,17 @@ extends MeshInstance3D
 
 var camera
 var cameraOrigin
+var start
+var end
 
 func _ready():
 	pass
 
 func _process(delta):
-	
+	start = global_position + (-global_basis.z * 0.05)
+	end = (-global_basis.z * 1) + start
+	points[0] = start
+	points[1] = end
 	
 	if points.size() < 2:
 		return
