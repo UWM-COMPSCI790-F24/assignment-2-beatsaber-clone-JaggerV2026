@@ -17,8 +17,6 @@ func _ready():
 	pass
 
 func _process(delta):
-	points[0] = global_position + (-global_basis.z * 0.05)
-	points[1] = (-global_basis.z * 1) + points[0]
 	
 	
 	if points.size() < 2:

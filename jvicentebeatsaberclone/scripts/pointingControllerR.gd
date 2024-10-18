@@ -1,22 +1,24 @@
 extends XRController3D
 
 @onready var line_renderer_r: MeshInstance3D = $Area3D/LineRendererR
-@onready var right_beam: Area3D = $rightBeam
 
 var beamVisible = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	line_renderer_r.points[0] = global_position + (-global_basis.z * 0.05)
+	line_renderer_r.points[1] = (-global_basis.z * 1) + line_renderer_r.points[0]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	line_renderer_r.points[0] = global_position + (-global_basis.z * 0.05)
+	line_renderer_r.points[1] = (-global_basis.z * 1) + line_renderer_r.points[0]
+	
 
 func _on_button_pressed(name: String) -> void:
 	if(name == "ax_button"):
 		if (beamVisible):
-			right_beam.visible = false
+			line_renderer_r.visible = false
 			beamVisible = false
 		else:
-			right_beam.visible = true
+			line_renderer_r.visible = true
 			beamVisible = true
