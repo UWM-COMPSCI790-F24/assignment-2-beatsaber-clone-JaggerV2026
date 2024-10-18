@@ -5,6 +5,7 @@ extends RayCast3D
 var start
 var end
 var collider
+var disable
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -15,7 +16,7 @@ func _process(delta: float) -> void:
 	start = position + (-basis.z * 0.05)
 	end = (-basis.z * 1) + start
 	target_position = end
-	if(is_colliding()):
+	if(is_colliding() and !disable):
 		cubeBreak.playing = true
 		await cubeBreak.finished
 		cubeBreak.playing = false

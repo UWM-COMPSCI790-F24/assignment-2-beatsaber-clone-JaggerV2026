@@ -18,8 +18,10 @@ func _on_button_pressed(name: String) -> void:
 		if (beamVisible):
 			line_renderer_r.visible = false
 			right_raycast.visible = false
+			right_raycast.disable = true
 			beamVisible = false
 		else:
 			line_renderer_r.visible = true
 			right_raycast.visible = true
+			right_raycast.disable = false
 			beamVisible = true
